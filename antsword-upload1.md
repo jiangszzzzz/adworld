@@ -34,12 +34,11 @@ GIF89a
 修改 filename = "shell.php" 后 forward
 
 上传成功
-
 ---
 ### antsword 连接
-![img.png](jpg_php.png)
+![img.png](imgs/jpg_php.png)
 可以看到 成功上传的php文件
-![img.png](img.png)
+![img.png](imgs/img.png)
 
 ---
 ### flag
