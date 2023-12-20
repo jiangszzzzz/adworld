@@ -9,7 +9,7 @@ brupsuit 提交
 ![img.png](imgs/brupsuit-post.png)
 
 brupsuit 提交 get和 post 请求
-```
+```http request
 POST /?a=1 HTTP/1.1   // 修改 GET 为 POST
 Host: 61.147.171.105:56891
 Upgrade-Insecure-Requests: 1

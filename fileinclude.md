@@ -12,7 +12,7 @@ Hi,EveryOne,The flag is in flag.php
 
 查看源码
 
-```
+```html
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 
@@ -43,7 +43,7 @@ echo $x;
 </html></html>
 ```
 关键行 
-```
+```html
 <b>Notice</b>:  Undefined index: language in <b>/var/www/html/index.php</b> on line <b>9</b><br />
 
 $lan = $_COOKIE['language'];  
