@@ -39,7 +39,6 @@ GIF89a
 ![img.png](imgs/jpg_php.png)
 可以看到 成功上传的php文件
 ![img.png](imgs/img.png)
-
 ---
 ### flag
 $flag="cyberpeace{323a5ab98f676bc4d403f717d7a0662c}";
