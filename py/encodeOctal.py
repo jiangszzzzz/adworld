@@ -4,7 +4,7 @@ def encode_octal(string):
     # ASCII
     print("AsicII")
     for i in string:
-        print(ord(i), end="")
+        print(ord(i), end=",")
     # 只显示八进制
     print("\n八进制")
     for i in string:
@@ -25,3 +25,6 @@ if __name__ == '__main__':
     encode_octal(str1)
     str2 = "ls -l"
     encode_octal(str2)
+    str3 = "select"
+    encode_octal(str3)
+
